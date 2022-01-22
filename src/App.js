@@ -1,23 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react'
+import CadastroDespesa from './componentes/CadastroDespesa'
+import ResumoDespesasMes from './componentes/ResumoDespesasMes';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Novo aplicativo de despesas.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Novo Despesas</h1>
       </header>
+      <ResumoDespesasMes></ResumoDespesasMes>
+      <hr/>
+      <CadastroDespesa></CadastroDespesa>
     </div>
   );
 }
