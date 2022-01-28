@@ -20,7 +20,7 @@ const listaCategorias = [
 
 function CadastroDespesa() {
 
-    const getDataAtualFormatada = () => {
+/*    const getDataAtualFormatada = () => {
         const dataAtual = new Date()
         const dia = dataAtual.getDate().toString().padStart(2, '0')
         const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0')
@@ -28,10 +28,10 @@ function CadastroDespesa() {
 
         return dia + "/" + mes + "/" + ano
     }
-
+*/
 
     const [categoria, setCategoria] = React.useState('')
-    const [data, setData] = React.useState(getDataAtualFormatada)
+    const [data, setData] = React.useState(new Date())
 
     return (
         <>
@@ -39,8 +39,8 @@ function CadastroDespesa() {
             <form>
                 <TextField
                     id="data"
-                    label="Data (dd/mm/aaaa)"
-                    type="text"
+                    label="Data"
+                    type="date"
                     variant="outlined"
                     fullWidth
                     InputLabelProps={{ shrink: true }}
