@@ -31,7 +31,7 @@ function CadastroDespesa() {
 */
 
     const [categoria, setCategoria] = React.useState('')
-    const [data, setData] = React.useState(new Date())
+    const [data, setData] = React.useState(new Date().toISOString().substring(0,10))
 
     return (
         <>
