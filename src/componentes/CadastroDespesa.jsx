@@ -44,6 +44,13 @@ function CadastroDespesa() {
         }
     }
 
+    function limparCampos() {
+        setCategoria('')
+        setData(new Date().toISOString().substring(0, 10))
+        setDescricao('')
+        setValor('')
+    }
+
     const [categoria, setCategoria] = React.useState('')
     const [data, setData] = React.useState(new Date().toISOString().substring(0, 10))
     const [descricao, setDescricao] = React.useState('')
@@ -112,7 +119,10 @@ function CadastroDespesa() {
                     onBlur={validarValor}
                 />
 
-                <Button id="botaoLimpar" color="secondary" variant="contained">Limpar</Button>
+                <Button id="botaoLimpar" color="secondary" variant="contained"
+                onClick={limparCampos}>
+                    Limpar
+                </Button>
                 <Button id="botaoSalvar" type="submit" color="primary" variant="contained">Salvar</Button>
 
             </form>
