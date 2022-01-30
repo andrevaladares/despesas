@@ -51,6 +51,15 @@ function CadastroDespesa() {
         setValor('')
     }
 
+    function enviarDados(event) {
+        event.preventDefault()
+        const dadosAEnviar = {
+            data, categoria, descricao, valor
+        }
+
+        console.log(dadosAEnviar)
+    }
+
     const [categoria, setCategoria] = React.useState('')
     const [data, setData] = React.useState(new Date().toISOString().substring(0, 10))
     const [descricao, setDescricao] = React.useState('')
@@ -62,7 +71,7 @@ function CadastroDespesa() {
     return (
         <>
             <p>Cadastro de Despesa</p>
-            <form>
+            <form onSubmit={enviarDados}>
                 <TextField
                     id="data"
                     label="Data"
