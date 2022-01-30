@@ -20,18 +20,37 @@ const listaCategorias = [
 
 function CadastroDespesa() {
 
-/*    const getDataAtualFormatada = () => {
-        const dataAtual = new Date()
-        const dia = dataAtual.getDate().toString().padStart(2, '0')
-        const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0')
-        const ano = dataAtual.getFullYear().toString()
+    /*    const getDataAtualFormatada = () => {
+            const dataAtual = new Date()
+            const dia = dataAtual.getDate().toString().padStart(2, '0')
+            const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0')
+            const ano = dataAtual.getFullYear().toString()
+    
+            return dia + "/" + mes + "/" + ano
+        }
+    */
 
-        return dia + "/" + mes + "/" + ano
+
+    /**
+     * Verifica se o valor informado é numérico
+     */
+    function validarValor(event) {
+        const valor = event.target.value.replace(",", ".")
+        if (isNaN(valor)) {
+            setEstadoErroCpf({ valido: false, texto: "Esse campo deve conter apenas valores no formato 9999999,99" })
+        }
+        else {
+            setEstadoErroCpf({ valido: true, texto: "" })
+        }
     }
-*/
 
     const [categoria, setCategoria] = React.useState('')
-    const [data, setData] = React.useState(new Date().toISOString().substring(0,10))
+    const [data, setData] = React.useState(new Date().toISOString().substring(0, 10))
+    const [descricao, setDescricao] = React.useState('')
+    const [valor, setValor] = React.useState('')
+
+    const [estadoErroCpf, setEstadoErroCpf] = React.useState({ valido: true, texto: "" })
+
 
     return (
         <>
@@ -74,16 +93,23 @@ function CadastroDespesa() {
                     variant="outlined"
                     fullWidth
                     margin="normal"
+                    value={descricao}
+                    onChange={(event) => { setDescricao(event.target.value) }}
                 />
 
                 <TextField
                     id="valor"
-                    label="Valor"
+                    label="Valor (9999999.99)"
                     type="text"
                     variant="outlined"
                     fullWidth
                     margin="normal"
                     required
+                    value={valor}
+                    error={!estadoErroCpf.valido}
+                    helperText={estadoErroCpf.texto}
+                    onChange={(event) => { setValor(event.target.value) }}
+                    onBlur={validarValor}
                 />
 
                 <Button id="botaoLimpar" color="secondary" variant="contained">Limpar</Button>
