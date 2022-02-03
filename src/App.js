@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import CadastroDespesa from './componentes/CadastroDespesa'
 import ResumoDespesasMes from './componentes/ResumoDespesasMes';
