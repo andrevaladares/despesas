@@ -5,9 +5,9 @@ import { Chip, Avatar } from '@material-ui/core'
 function ResumoDespesasMes() {
 
     const obterResumoMes = (nome) => {
-        if (nome = 'andre') return '2500,00'
-        if (nome = 'flavia') return '3000,00'
-        if (nome = 'total') return '5500,00'
+        if (nome === 'andre') return '2500,00'
+        if (nome === 'flavia') return '3000,00'
+        if (nome === 'total') return '5500,00'
     }
 
     const [resumoandre, setResumoAndre] = React.useState(obterResumoMes('andre'))
