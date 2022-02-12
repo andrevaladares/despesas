@@ -20,17 +20,6 @@ const listaCategorias = [
 
 function CadastroDespesa() {
 
-    /*    const getDataAtualFormatada = () => {
-            const dataAtual = new Date()
-            const dia = dataAtual.getDate().toString().padStart(2, '0')
-            const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0')
-            const ano = dataAtual.getFullYear().toString()
-    
-            return dia + "/" + mes + "/" + ano
-        }
-    */
-
-
     /**
      * Verifica se o valor informado é numérico
      */
