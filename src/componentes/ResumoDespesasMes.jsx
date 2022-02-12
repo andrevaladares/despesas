@@ -10,9 +10,9 @@ function ResumoDespesasMes() {
         if (nome === 'total') return '5500,00'
     }
 
-    const [resumoandre, setResumoAndre] = React.useState(obterResumoMes('andre'))
-    const [resumoflavia, setResumoFlavia] = React.useState(obterResumoMes('flavia'))
-    const [resumototal, setResumoTotal] = React.useState(obterResumoMes('total'))
+    const resumoandre = obterResumoMes('andre')
+    const resumoflavia = obterResumoMes('flavia')
+    const resumototal = obterResumoMes('total')
 
     return (
         <>
